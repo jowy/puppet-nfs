@@ -5,6 +5,7 @@ define nfs::mount(
   $ensure=present,
   $server_options='',
   $client_options='auto',
+  $client_ip=$::ipaddress,
 ) {
 
   # use exported ressources
@@ -12,7 +13,7 @@ define nfs::mount(
     ensure          => $ensure,
     share           => $share,
     options         => $server_options,
-    guest           => $::ipaddress,
+    guest           => $client_ip,
     tag             => $server,
   }
 
