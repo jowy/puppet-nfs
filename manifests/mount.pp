@@ -13,6 +13,7 @@ define nfs::mount(
     ensure          => $ensure,
     share           => $share,
     options         => $server_options,
+    client_options  => $client_options,
     guest           => $client_ip,
     tag             => $server,
   }
